@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-store-seed": {
+    "angular-starter": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-store-seed",
+            "outputPath": "dist/angular-starter",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/styles.scss"
             ],
             "scripts": []
           },
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-store-seed:build"
+            "browserTarget": "angular-starter:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-store-seed:build:production"
+              "browserTarget": "angular-starter:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-store-seed:build"
+            "browserTarget": "angular-starter:build"
           }
         },
         "test": {
@@ -83,7 +83,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "src/assets/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -106,7 +106,7 @@
         }
       }
     },
-    "angular-store-seed-e2e": {
+    "angular-starter-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-store-seed:serve"
+            "devServerTarget": "angular-starter:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-store-seed:serve:production"
+              "devServerTarget": "angular-starter:serve:production"
             }
           }
         },
@@ -135,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "angular-store-seed"
+  "defaultProject": "angular-starter",
+  "cli": {
+    "defaultCollection": "@ngxs/schematics"
+  }
 }
